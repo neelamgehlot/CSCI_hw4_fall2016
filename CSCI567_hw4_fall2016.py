@@ -50,7 +50,7 @@ X_train_norm , X_test_norm = hw_utils.normalize(X_train, X_test)
 # print "Time taken in ReLu activation : " + str((end - start).total_seconds())
 
 arch = [[50, 800, 500, 300, 2]]
-# L2 = [0.0000001, 0.0000005, 0.000001, 0.000005, 0.00001]
+L2 = [0.0000001, 0.0000005, 0.000001, 0.000005, 0.00001]
 
 # # Part g L2
 # print "\n\n L2"
@@ -60,13 +60,13 @@ arch = [[50, 800, 500, 300, 2]]
 # end = datetime.now()
 # print "Time taken in L2 regularization : " + str((end - start).total_seconds())
 
-# # Part h early stopping and L2
-# print "\n\n early stopping and L2"
-# start = datetime.now()
-# hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
-#                     arch, 'relu', 'softmax', L2, 30, 1000, 0.0005, [0.0], [0.0], False, True, 0)
-# end = datetime.now()
-# print "Time taken in Early stopping and L2 regularization : " + str((end - start).total_seconds())
+# Part h early stopping and L2
+print "\n\n early stopping and L2"
+start = datetime.now()
+hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
+                    arch, 'relu', 'softmax', L2, 30, 1000, 0.0005, [0.0], [0.0], False, True, 0)
+end = datetime.now()
+print "Time taken in Early stopping and L2 regularization : " + str((end - start).total_seconds())
 
 # Part i Decay
 # print "\n\n decay"
@@ -79,15 +79,15 @@ arch = [[50, 800, 500, 300, 2]]
 # print "Time taken in SGD with weight decay : " + str((end - start).total_seconds())
 
 # Part j Momentum
-print "\n\n momentum"
-L2 = [0.0]
-decay = [0.00001] # best decay from i
-momentum = [0.99, 0.98, 0.95, 0.9, 0.85]
-start = datetime.now()
-hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
-                    arch, 'relu', 'softmax', L2, 50, 1000, 0.00001, decay, momentum, True, False, 0)
-end = datetime.now()
-print "Time taken in momentum : " + str((end - start).total_seconds())
+# print "\n\n momentum"
+# L2 = [0.0]
+# decay = [0.00001] # best decay from i
+# momentum = [0.99, 0.98, 0.95, 0.9, 0.85]
+# start = datetime.now()
+# hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
+#                     arch, 'relu', 'softmax', L2, 50, 1000, 0.00001, decay, momentum, True, False, 0)
+# end = datetime.now()
+# print "Time taken in momentum : " + str((end - start).total_seconds())
 
 # # Part k combination
 # print "\n\n combination"
