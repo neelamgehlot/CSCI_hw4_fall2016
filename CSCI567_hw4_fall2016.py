@@ -69,25 +69,25 @@ arch = [[50, 800, 500, 300, 2]]
 # print "Time taken in Early stopping and L2 regularization : " + str((end - start).total_seconds())
 
 # Part i Decay
-print "\n\n decay"
-L2 = [0.0000005]
-decay = [0.00001, 0.00005, 0.0001, 0.0003, 0.0007, 0.001]
-start = datetime.now()
-hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
-                    arch, 'relu', 'softmax', L2, 100, 1000, 0.00001, decay, [0.0], False, False, 0)
-end = datetime.now()
-print "Time taken in SGD with weight decay : " + str((end - start).total_seconds())
-
-# # Part j Momentum
-# print "\n\n momentum"
-# L2 = [0.0]
-# decay = [0.0] # best decay from i
-# momentum = [0.99, 0.98, 0.95, 0.9, 0.85]
+# print "\n\n decay"
+# L2 = [0.0000005]
+# decay = [0.00001, 0.00005, 0.0001, 0.0003, 0.0007, 0.001]
 # start = datetime.now()
 # hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
-#                     arch, 'relu', 'softmax', L2, 50, 1000, 0.00001, decay, momentum, True, False, 0)
+#                     arch, 'relu', 'softmax', L2, 100, 1000, 0.00001, decay, [0.0], False, False, 0)
 # end = datetime.now()
-# print "Time taken in momentum : " + str((end - start).total_seconds())
+# print "Time taken in SGD with weight decay : " + str((end - start).total_seconds())
+
+# Part j Momentum
+print "\n\n momentum"
+L2 = [0.0]
+decay = [0.00001] # best decay from i
+momentum = [0.99, 0.98, 0.95, 0.9, 0.85]
+start = datetime.now()
+hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
+                    arch, 'relu', 'softmax', L2, 50, 1000, 0.00001, decay, momentum, True, False, 0)
+end = datetime.now()
+print "Time taken in momentum : " + str((end - start).total_seconds())
 
 # # Part k combination
 # print "\n\n combination"
