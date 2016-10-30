@@ -16,30 +16,30 @@ Y_test_small = Y_test[0:100]
 print "start"
 
 hw_utils.testmodels(X_train_small, Y_train_small, X_test_small, Y_test_small,
-                    [50, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, 0.0, 0.0, False, False, 1)
+                    [50, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 1)
 
 hw_utils.testmodels(X_train_small, Y_train_small, X_test_small, Y_test_small,
-                    [50, 50, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, 0.0, 0.0, False, False, 1)
+                    [50, 50, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 1)
 
 hw_utils.testmodels(X_train_small, Y_train_small, X_test_small, Y_test_small,
-                    [50, 50, 50, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, 0.0, 0.0, False, False, 1)
+                    [50, 50, 50, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 1)
 
 hw_utils.testmodels(X_train_small, Y_train_small, X_test_small, Y_test_small,
-                    [50, 50, 50, 50, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, 0.0, 0.0, False, False, 1)
+                    [50, 50, 50, 50, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 1)
 
 hw_utils.testmodels(X_train_small, Y_train_small, X_test_small, Y_test_small,
-                    [50, 50, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, 0.0, 0.0, False, False, 1)
+                    [50, 50, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 1)
 
 hw_utils.testmodels(X_train_small, Y_train_small, X_test_small, Y_test_small,
-                    [50, 500, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, 0.0, 0.0, False, False, 1)
+                    [50, 500, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 1)
 
 hw_utils.testmodels(X_train_small, Y_train_small, X_test_small, Y_test_small,
-                    [50, 500, 300, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, 0.0, 0.0, False, False, 1)
+                    [50, 500, 300, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 1)
 
 hw_utils.testmodels(X_train_small, Y_train_small, X_test_small, Y_test_small,
-                    [50, 800, 500, 300, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, 0.0, 0.0, False, False, 1)
+                    [50, 800, 500, 300, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 1)
 
 hw_utils.testmodels(X_train_small, Y_train_small, X_test_small, Y_test_small,
-                    [50, 800, 800, 500, 300, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, 0.0, 0.0, False, False, 1)
+                    [50, 800, 800, 500, 300, 2], 'linear', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 1)
 
 print "end"
