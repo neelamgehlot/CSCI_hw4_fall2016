@@ -14,40 +14,40 @@ X_train_norm , X_test_norm = hw_utils.normalize(X_train, X_test)
 # Y_test_small = Y_test[0:100]
 
 # Part d linear
-print "Linear arch 1"
-linear_arch1 = [[50, 2],[50, 50, 2],[50, 50, 50, 2],[50, 50, 50, 50, 2]]
-hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
-                    linear_arch1, 'linear', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 0)
-print "\n\nLinear arch 2"
-linear_arch2 = [[50, 50, 2], [50, 500, 2], [50, 500, 300, 2], [50, 800, 500, 300, 2], [50, 800, 800, 500, 300, 2]]
-
-hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
-                    linear_arch2, 'linear', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 0)
-
-arch = [[50, 50, 2], [50, 500, 2], [50, 500, 300, 2], [50, 800, 500, 300, 2], [50, 800, 800, 500, 300, 2]]
-
-print "\n\n Sigmoid"
-# Part e sigmoid
-hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
-                    arch, 'sigmoid', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 0)
-
-print "\n\n Relu"
-# Part f relu
-hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
-                    arch, 'relu', 'softmax',[0.0], 30, 1000, 0.0005, [0.0], [0.0], False, False, 0)
-
+# print "Linear arch 1"
+# linear_arch1 = [[50, 2],[50, 50, 2],[50, 50, 50, 2],[50, 50, 50, 50, 2]]
+# hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
+#                     linear_arch1, 'linear', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 0)
+# print "\n\nLinear arch 2"
+# linear_arch2 = [[50, 50, 2], [50, 500, 2], [50, 500, 300, 2], [50, 800, 500, 300, 2], [50, 800, 800, 500, 300, 2]]
+#
+# hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
+#                     linear_arch2, 'linear', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 0)
+#
+# arch = [[50, 50, 2], [50, 500, 2], [50, 500, 300, 2], [50, 800, 500, 300, 2], [50, 800, 800, 500, 300, 2]]
+#
+# print "\n\n Sigmoid"
+# # Part e sigmoid
+# hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
+#                     arch, 'sigmoid', 'softmax',[0.0], 30, 1000, 0.001, [0.0], [0.0], False, False, 0)
+#
+# print "\n\n Relu"
+# # Part f relu
+# hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
+#                     arch, 'relu', 'softmax',[0.0], 30, 1000, 0.0005, [0.0], [0.0], False, False, 0)
+#
 arch = [[50, 800, 500, 300, 2]]
-L2 = [0.0000001, 0.0000005, 0.000001, 0.000005, 0.00001]
-
-print "\n\n L2"
-# Part g L2
-hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
-                    arch, 'relu', 'softmax', L2, 30, 1000, 0.0005, [0.0], [0.0], False, False, 0)
-
-print "\n\n early stopping and L2"
-# Part h early stopping and L2
-hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
-                    arch, 'relu', 'softmax', L2, 30, 1000, 0.0005, [0.0], [0.0], False, True, 0)
+# L2 = [0.0000001, 0.0000005, 0.000001, 0.000005, 0.00001]
+#
+# print "\n\n L2"
+# # Part g L2
+# hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
+#                     arch, 'relu', 'softmax', L2, 30, 1000, 0.0005, [0.0], [0.0], False, False, 0)
+#
+# print "\n\n early stopping and L2"
+# # Part h early stopping and L2
+# hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
+#                     arch, 'relu', 'softmax', L2, 30, 1000, 0.0005, [0.0], [0.0], False, True, 0)
 
 print "\n\n decay"
 # Part i Decay
