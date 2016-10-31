@@ -1,0 +1,6 @@
+
+
+ combination
+Score for architecture = [50, 800, 500, 300, 2], lambda = 1e-05, decay = 1e-05, momentum = 0.99, actfn = relu: 0.870180294473
+Best Config: architecture = [50, 800, 500, 300, 2], lambda = 1e-05, decay = 1e-05, momentum = 0.99, actfn = relu, best_acc = 0.870180294473
+Time taken in combining the above : 479.36784
