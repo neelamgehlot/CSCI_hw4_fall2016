@@ -68,35 +68,35 @@ arch = [[50, 800, 500, 300, 2]]
 # print "Time taken in SGD with weight decay : " + str((end - start).total_seconds())
 
 # Part j Momentum
-print "\n\nMomentum"
-L2 = [0.0]
+# print "\n\nMomentum"
+# L2 = [0.0]
+# decay = [0.00001] # best decay from i
+# momentum = [0.99, 0.98, 0.95, 0.9, 0.85]
+# start = datetime.now()
+# hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
+#                     arch, 'relu', 'softmax', L2, 50, 1000, 0.00001, decay, momentum, True, False, 1)
+# end = datetime.now()
+# print "Time taken in momentum : " + str((end - start).total_seconds())
+#
+# Part k combination
+print "\n\nCombination"
+L2 = [0.0000001] # Best value from h
 decay = [0.00001] # best decay from i
-momentum = [0.99, 0.98, 0.95, 0.9, 0.85]
+momentum = [0.99] # best value from j
 start = datetime.now()
 hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
-                    arch, 'relu', 'softmax', L2, 50, 1000, 0.00001, decay, momentum, True, False, 1)
+                    arch, 'relu', 'softmax', L2, 100, 1000, 0.00001, decay, momentum, True, True, 1)
 end = datetime.now()
-print "Time taken in momentum : " + str((end - start).total_seconds())
-#
-# # Part k combination
-# print "\n\nCombination"
-# L2 = [0.00001] # Best value from h
-# decay = [0.00001] # best decay from i
-# momentum = [0.99] # best value from j
-# start = datetime.now()
-# hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
-#                     arch, 'relu', 'softmax', L2, 100, 1000, 0.00001, decay, momentum, True, True, 1)
-# end = datetime.now()
-# print "Time taken in combining the above : " + str((end - start).total_seconds())
-#
-# # Part l Grid search with cross validation
-# print "\n\nGrid search with cross validation"
-# arch = [[50, 50, 2], [50, 500, 2], [50, 500, 300, 2], [50, 800, 500, 300, 2], [50, 800, 800, 500, 300, 2]]
-# L2 = [0.0000001, 0.0000005, 0.000001, 0.000005, 0.00001]
-# decay = [0.00001, 0.0005, 0.0001]
-# momentum = [0.99]
-# start = datetime.now()
-# hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
-#                     arch, 'relu', 'softmax', L2, 100, 1000, 0.00001, decay, momentum, True, True, 1)
-# end = datetime.now()
-# print "Time taken in Grid search with cross validation : " + str((end - start).total_seconds())
+print "Time taken in combining the above : " + str((end - start).total_seconds())
+
+# Part l Grid search with cross validation
+print "\n\nGrid search with cross validation"
+arch = [[50, 50, 2], [50, 500, 2], [50, 500, 300, 2], [50, 800, 500, 300, 2], [50, 800, 800, 500, 300, 2]]
+L2 = [0.0000001, 0.0000005, 0.000001, 0.000005, 0.00001]
+decay = [0.00001, 0.0005, 0.0001]
+momentum = [0.99]
+start = datetime.now()
+hw_utils.testmodels(X_train_norm, Y_train, X_test_norm, Y_test,
+                    arch, 'relu', 'softmax', L2, 100, 1000, 0.00001, decay, momentum, True, True, 1)
+end = datetime.now()
+print "Time taken in Grid search with cross validation : " + str((end - start).total_seconds())
